@@ -12,9 +12,9 @@ export default function LogoutButton() {
     try {
       await logout();
       router.push("/login");
-    } catch (error) {
+    } catch (err) {
       setError("Fail to sign out");
-      console.log(error);
+      alert(error);
     }
   }
   return (
@@ -22,7 +22,6 @@ export default function LogoutButton() {
       <button className="block button primary-button" onClick={handleLogout}>
         Logout
       </button>
-      <p>{error}</p>
     </>
   );
 }

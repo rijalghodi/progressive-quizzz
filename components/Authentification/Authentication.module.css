@@ -1,5 +1,5 @@
 .input {
-  padding: 1rem 1rem !important;
+  padding: 0.6rem 1rem !important;
   width: 100%;
   background-color: var(--neutral);
 }
@@ -7,4 +7,12 @@
 .formWrapper {
   background-color: var(--neutral-down) !important;
   /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.errorMessage {
+  color: #660000;
+  background-color: #ffc2c2;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
 }

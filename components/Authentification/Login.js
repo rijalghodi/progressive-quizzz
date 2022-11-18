@@ -28,13 +28,13 @@ export default function Login() {
 
   return (
     <>
-      <div className={"p-10 w-[330px] lg:w-[400px] " + style.formWrapper}>
+      <div
+        className={
+          "p-10 w-[330px] lg:w-[400px] rounded-md " + style.formWrapper
+        }
+      >
         <h2 className="text-center mb-4 bg">Welcome Back!</h2>
-        {error && (
-          <div className="bg-red-200 text-red-900 w-full px-4 py-3 mb-3">
-            {error}
-          </div>
-        )}
+        {error && <div className={style.errorMessage}>{error}</div>}
         <form onSubmit={handleSubmit}>
           <div id="email" className="mb-3">
             <label className="block mb-1">Email</label>
@@ -61,7 +61,7 @@ export default function Login() {
       <div className="w-full text-center mt-2">
         Dont have an account?{" "}
         <span className="link">
-          <Link href={"/signup"}>Sign Up</Link>
+          <Link href={"/signup"}>Sign up</Link>
         </span>
       </div>
     </>
