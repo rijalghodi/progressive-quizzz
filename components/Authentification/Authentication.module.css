@@ -1,0 +1,10 @@
+.input {
+  padding: 1rem 1rem !important;
+  width: 100%;
+  background-color: var(--neutral);
+}
+
+.formWrapper {
+  background-color: var(--neutral-down) !important;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}

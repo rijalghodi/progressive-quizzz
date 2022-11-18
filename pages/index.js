@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
+import { AuthProvider } from "../context/AuthContext";
+import Dashboard from "../components/dashboard/Dashboard";
+import Layout from "../components/layout/Layout";
 import styles from "../styles/Home.module.css";
-import Login from "../components/sign-up/Authentication";
 
 export default function Home() {
   return (
@@ -11,22 +13,11 @@ export default function Home() {
         <meta name="description" content="Great quizz app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>Welcome to Quizz</h1>
-        <p>A Great Quiz App</p>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Layout>
+        <AuthProvider>
+          <Dashboard />
+        </AuthProvider>
+      </Layout>
     </div>
   );
 }
