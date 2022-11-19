@@ -8,17 +8,17 @@ import { getQuiz } from "../../store/quizAsyncThunk";
 import { selectQuiz, rehydrate } from "../../store/quizSlice";
 import { store } from "../../store/store";
 
-export default function QuizPage({ quiz }) {
+export default function QuizPage({ initialState }) {
   // Redux tools
   const dispatch = useDispatch();
-  const questions = quiz.quiz.questions;
+  const { quiz } = initialState;
+  const { questions } = quiz;
 
   // React Tools
-  useEffect(() => {
-    dispatch(rehydrate(questions));
-  });
+  // useEffect(() => {
+  //   dispatch(rehydrate(questions));
+  // });
 
-  const [activeQuestion, setActiveQuestion] = useState(1);
   const { currentUser } = useAuth();
   const route = useRouter();
   if (!currentUser) {
@@ -27,12 +27,8 @@ export default function QuizPage({ quiz }) {
   } else {
     return (
       <div className="w-full flex flex-row">
-        <QuizNav questions={questions} setActiveQuestion={setActiveQuestion} />
-        <Quiz
-          questions={questions}
-          activeQuestion={activeQuestion}
-          setActiveQuestion={setActiveQuestion}
-        />
+        <QuizNav questions={questions} />
+        <Quiz questions={questions} />
       </div>
     );
   }
@@ -46,13 +42,12 @@ export async function getServerSideProps() {
   // const data = await response.json();
   // const quiz = data.results;
   await store.dispatch(getQuiz());
-  console.log("Get State");
+
   const initialState = store.getState();
-  console.log(initialState);
 
   return {
     props: {
-      quiz: initialState,
+      initialState,
     },
   };
 }

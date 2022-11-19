@@ -5,6 +5,7 @@ const quizSlice = createSlice({
   name: "quiz",
   initialState: {
     questions: [],
+    activeQuestion: 1,
     score: 0,
     isLoading: false,
     error: false,
@@ -12,6 +13,12 @@ const quizSlice = createSlice({
   reducers: {
     rehydrate: (state, { payload }) => {
       state.questions = payload;
+    },
+    increaseScore: (state, { payload }) => {
+      state.score = state.score + 1;
+    },
+    setActiveQuestion: (state, { payload }) => {
+      state.activeQuestion = payload;
     },
   },
   extraReducers: (builder) => {
@@ -33,6 +40,8 @@ const quizSlice = createSlice({
 });
 
 export const selectQuiz = (state) => state.quiz.quiz;
+export const selectActiveQuestion = (state) => state.quiz.activeQuestion;
 
-export const { rehydrate } = quizSlice.actions;
+export const { rehydrate, increaseScore, setActiveQuestion } =
+  quizSlice.actions;
 export default quizSlice.reducer;
