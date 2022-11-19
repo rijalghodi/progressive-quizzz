@@ -3,4 +3,30 @@
   top: 0;
   right: 0;
   bottom: 0;
+  background: var(--neutral-up);
+  padding: 4rem 1.4rem;
+  overflow-y: auto;
+}
+
+.questionNavButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.questionNavButton {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.actionButton:hover {
+  background-color: var(--accent-down);
+}
+
+.actionButton {
+  margin: 1rem 0rem;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: var(--neutral-down);
 }
