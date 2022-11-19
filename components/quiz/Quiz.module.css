@@ -1,0 +1,58 @@
+.fieldWrapper {
+  min-height: 100vh;
+  padding-top: 8rem;
+}
+
+.questionWrapper {
+  position: relative;
+  min-height: auto;
+  height: auto;
+}
+
+.counterWrapper {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.3rem;
+}
+
+.askWrapper {
+}
+
+.choicesWrapper {
+  margin-top: 2rem;
+}
+
+.choiceWrapper:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.choiceWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: var(--neutral-up);
+  width: 100%;
+  margin-bottom: 0.4rem;
+  border-radius: 0.125rem;
+}
+
+.choiceMarker {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--neutral);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.125rem;
+}
+
+.choice {
+}
