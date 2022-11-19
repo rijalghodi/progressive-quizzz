@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Quiz.module.css";
 
-export default function Choices({ correct, incorrects }) {
+export default function Choices({ correct, incorrects, number }) {
   const numQuestions = incorrects.length + 1;
 
   // Marker (A, B, C, D)
@@ -13,28 +13,52 @@ export default function Choices({ correct, incorrects }) {
   // Marker for the correct answer
   const random = Math.floor(Math.random() * numQuestions);
   const trueMarker = markers[random];
-  let counter = -1;
+  let index = -1;
 
   return (
-    <ul className={styles.choicesWrapper}>
+    <div className={styles.choicesWrapper}>
       {markers.map((marker) => {
         if (marker !== trueMarker) {
-          counter++;
+          index++;
           return (
-            <li className={styles.choiceWrapper}>
-              <div className={styles.choiceMarker}>{marker}</div>
-              <div className={styles.choice}>{incorrects[counter]}</div>
-            </li>
+            <>
+              <input
+                type="radio"
+                id={`choice${number}${marker}`}
+                name={`choices${number}`}
+                value={marker}
+                className="hidden radio-btn"
+              ></input>
+              <label
+                htmlFor={`choice${number}${marker}`}
+                className={styles.choiceWrapper}
+              >
+                <div className={styles.choiceMarker}>{marker}</div>
+                <div className={styles.choice}>{incorrects[index]}</div>
+              </label>
+            </>
           );
         } else {
           return (
-            <div className={styles.choiceWrapper}>
-              <div className={styles.choiceMarker}>{marker}</div>
-              <div className={styles.choice}>{correct}</div>
-            </div>
+            <>
+              <input
+                type="radio"
+                id={`choice${number}${marker}`}
+                name={`choices${number}`}
+                value={marker}
+                className="hidden"
+              ></input>
+              <label
+                htmlFor={`choice${number}${marker}`}
+                className={styles.choiceWrapper}
+              >
+                <div className={"marker " + styles.choiceMarker}>{marker}</div>
+                <div className={styles.choice}>{correct}</div>
+              </label>
+            </>
           );
         }
       })}
-    </ul>
+    </div>
   );
 }

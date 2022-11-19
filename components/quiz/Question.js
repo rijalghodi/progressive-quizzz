@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectActiveQuestion, setActiveQuestion } from "../../store/quizSlice";
 import styles from "./Quiz.module.css";
 import Choices from "./Choices";
+import { useRouter } from "next/router";
 
 export default function Question({ questionSet, number, amount }) {
   const { question, correct_answer, incorrect_answers } = questionSet;
   const activeQuestion = useSelector(selectActiveQuestion);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [hidden, setHidden] = useState(true);
 
@@ -29,7 +31,9 @@ export default function Question({ questionSet, number, amount }) {
   };
 
   const onSubmit = () => {
-    console.log("Submit!");
+    if (confirm("Do you want to submit?")) {
+      router.push("quiz/result");
+    }
   };
 
   return (
@@ -39,7 +43,11 @@ export default function Question({ questionSet, number, amount }) {
         <div className={styles.askWrapper}>
           <p>{question}</p>
         </div>
-        <Choices correct={correct_answer} incorrects={incorrect_answers} />
+        <Choices
+          correct={correct_answer}
+          incorrects={incorrect_answers}
+          number={number}
+        />
       </div>
       <div className="flex gap-2">
         {number !== amount ? (

@@ -9,9 +9,12 @@ html {
   --accent: #7fdd40; */
 
   /* // Theme Color Loid Forger */
-  --neutral: #104a56;
+
+  /* --neutral-up: #166879; */
   --neutral-up: #135967;
+  --neutral: #104a56;
   --neutral-down: #0d3c45;
+  /*--neutral-down: 0d3c45 */
   --primary: #ffffff;
   --accent-up: #ffc370;
   --accent: #ffb347;
@@ -84,13 +87,13 @@ input {
   transition: 0.5 ease;
 }
 
+input[type="radio"]:checked + label {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .button {
   padding: 0.6rem 2rem;
   cursor: pointer;
-}
-
-.big-button {
-  padding: 0.8rem 2rem;
 }
 
 .primary-button:hover {
