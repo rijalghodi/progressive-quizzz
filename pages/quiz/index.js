@@ -4,7 +4,7 @@ import Questions from "../../components/quiz/Questions";
 
 export default function QuizPage({ questions }) {
   return (
-    <div className="w-full relative">
+    <div className="w-full flex flex-row">
       <QuizNav questions={questions} />
       <Questions questions={questions} />
     </div>

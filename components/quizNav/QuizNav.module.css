@@ -1,11 +1,18 @@
 .quizNav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--neutral-up);
-  padding: 4rem 1.4rem;
-  overflow-y: auto;
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .quizNav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--neutral-up);
+    padding: 4rem 1.4rem;
+    overflow-y: auto;
+  }
 }
 
 .questionNavButton:hover {
@@ -29,4 +36,5 @@
   padding: 0.5rem 1rem;
   background-color: var(--accent);
   color: var(--neutral-down);
+  border-radius: 0.125rem;
 }

@@ -59,7 +59,7 @@ a {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 input:focus {
@@ -100,7 +100,7 @@ input {
 .primary-button {
   background-color: var(--accent) !important;
   color: black !important;
-  border-radius: 5px;
+  border-radius: 0.125rem;
   transition: 0.3s ease;
 }
 
@@ -115,7 +115,7 @@ input {
   color: white !important;
   border: 1px solid var(--primary) !important;
   transition: 0.3s ease;
-  border-radius: 5px;
+  border-radius: 0.125rem;
 }
 
 @media (prefers-color-scheme: dark) {
