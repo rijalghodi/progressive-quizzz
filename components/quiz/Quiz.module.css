@@ -61,6 +61,7 @@
   width: 100%;
   margin-bottom: 0.4rem;
   border-radius: 0.125rem;
+  cursor: pointer;
 }
 
 .choiceMarker {

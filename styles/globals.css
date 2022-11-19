@@ -99,14 +99,14 @@ input {
 
 .primary-button {
   background-color: var(--accent) !important;
-  color: black !important;
+  color: var(--neutral-down) !important;
   border-radius: 0.125rem;
   transition: 0.3s ease;
 }
 
 .secondary-button:hover {
   background-color: var(--accent) !important;
-  color: black !important;
+  color: var(--neutral-down) !important;
   border: 1px solid var(--accent) !important;
 }
 

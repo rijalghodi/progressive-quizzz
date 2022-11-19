@@ -6,20 +6,19 @@ export default function QuizNav({ questions }) {
   return (
     <aside className={styles.quizNav}>
       <h2 className="">Quiz Navigation</h2>
-      <div className="">
+      <ul className="">
         {questions?.map((question) => {
           number++;
           return (
-            <button
-              type="button"
+            <li
               title={`Go to Question no. ${number}`}
-              className={styles.questionNavButton}
+              className={styles.questionNav}
             >
-              <span>{number}</span>
-            </button>
+              Question <span>{number}</span>
+            </li>
           );
         })}
-      </div>
+      </ul>
       <div className="">
         <button
           type="button"

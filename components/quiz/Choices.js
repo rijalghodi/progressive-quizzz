@@ -16,15 +16,15 @@ export default function Choices({ correct, incorrects }) {
   let counter = -1;
 
   return (
-    <div className={styles.choicesWrapper}>
+    <ul className={styles.choicesWrapper}>
       {markers.map((marker) => {
         if (marker !== trueMarker) {
           counter++;
           return (
-            <div className={styles.choiceWrapper}>
+            <li className={styles.choiceWrapper}>
               <div className={styles.choiceMarker}>{marker}</div>
               <div className={styles.choice}>{incorrects[counter]}</div>
-            </div>
+            </li>
           );
         } else {
           return (
@@ -35,6 +35,6 @@ export default function Choices({ correct, incorrects }) {
           );
         }
       })}
-    </div>
+    </ul>
   );
 }
