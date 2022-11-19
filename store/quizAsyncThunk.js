@@ -8,8 +8,6 @@ export const getQuiz = createAsyncThunk("getQuiz", async () => {
     if (response.ok == true) {
       const data = await response.json();
       const quiz = data.results;
-      console.log(quiz);
-      // const { question, correct_answer, incorrect_answers } = questionsSet;
       return quiz;
     } else {
       throw new Error("GET request failed");

@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getQuiz } from "./quizAsyncThunk";
+import quizNormalizer from "../util/helper";
 
 const quizSlice = createSlice({
   name: "quiz",
   initialState: {
-    questions: [],
+    quiz: [],
     activeQuestion: 1,
     score: 0,
     isLoading: false,
@@ -27,10 +28,10 @@ const quizSlice = createSlice({
         state.isLoading = true;
         state.error = false;
       })
-      .addCase(getQuiz.fulfilled, (state, action) => {
+      .addCase(getQuiz.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = false;
-        state.questions = action.payload;
+        state.quiz = quizNormalizer(payload);
       })
       .addCase(getQuiz.rejected, (state) => {
         state.isLoading = false;

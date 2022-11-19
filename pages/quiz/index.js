@@ -35,14 +35,7 @@ export default function QuizPage({ initialState }) {
 }
 
 export async function getServerSideProps() {
-  // fetch data from API
-  // const response = await fetch(
-  //   "https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple"
-  // );
-  // const data = await response.json();
-  // const quiz = data.results;
   await store.dispatch(getQuiz());
-
   const initialState = store.getState();
 
   return {
