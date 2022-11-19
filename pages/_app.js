@@ -5,11 +5,15 @@ import "../styles/output.css";
 // bootstrap css
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthProvider } from "../context/AuthContext";
+import { store } from "../store/store";
+import { Provider } from "react-redux";
 
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </AuthProvider>
   );
 }

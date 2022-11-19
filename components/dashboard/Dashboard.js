@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Dashboard() {
@@ -20,9 +21,11 @@ export default function Dashboard() {
             is used for buttons and important texts.
           </p>
         </article>
-        <button className="block button primary-button mx-auto">
-          Start The Quiz
-        </button>
+        <Link href={"/quiz"}>
+          <button className="block button primary-button mx-auto">
+            Start The Quiz
+          </button>
+        </Link>
       </main>
     </>
   );

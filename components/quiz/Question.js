@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Quiz.module.css";
 import Choices from "./Choices";
 
 export default function Question({ questionSet, number }) {
   const { question, correct_answer, incorrect_answers } = questionSet;
+  console.log(question);
+
+  const [hidden, setHidden] = useState(true);
 
   return (
-    <section className={styles.fieldWrapper}>
+    <section className={"" + styles.fieldWrapper}>
       <div className={styles.questionWrapper}>
         <div className={styles.counterWrapper}>{number}.</div>
         <div className={styles.askWrapper}>
