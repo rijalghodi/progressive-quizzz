@@ -20,7 +20,11 @@ export default function Header() {
               <Link href={"/"}>Home</Link>
             </li>
             <li className="link text-xl">
-              <a href="https://www.github.com/rijalghodi" target="_blank">
+              <a
+                href="https://www.github.com/rijalghodi"
+                rel="noreferrer"
+                target="_blank"
+              >
                 About
               </a>
             </li>

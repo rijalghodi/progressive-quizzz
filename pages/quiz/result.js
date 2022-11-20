@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectScore } from "../../store/quizSlice";
 import Link from "next/link";
 
-export default function result() {
+export default function ResultPage() {
   const score = useSelector(selectScore);
   return (
     <main className="w-full sm:w-4/5 md:min-w-[550px] lg:w-1/2 py-32 px-6 lg:py-48  mx-auto">

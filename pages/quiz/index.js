@@ -16,10 +16,8 @@ export default function QuizPage({ initialState }) {
 
   // React Tools
   useEffect(() => {
-    console.log("rehydrate.......");
-    console.log(quiz);
     dispatch(rehydrate(quiz));
-  }, []);
+  }, [dispatch, quiz]);
 
   const { currentUser } = useAuth();
   const route = useRouter();

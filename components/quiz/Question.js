@@ -18,7 +18,7 @@ export default function Question({ questionSet, amount }) {
     } else {
       setHidden(true);
     }
-  }, [activeQuestion]);
+  }, [activeQuestion, number]);
 
   // Event handlers
   const onNext = () => {
