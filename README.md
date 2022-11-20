@@ -8,6 +8,7 @@ This app is my work submitted to the technical test at PT. Optima Media Tekologi
 This app allows users to take a multiple-choice quiz on Geography subjects in a personal, beautiful, and convenient environment.
 
 Here is what the app looks like:
+
 <img src="./assets/quizzz-login.png" alt="Quizzz Login"/>
 <img src="./assets/quizzz.png" alt="Quizz Navigation"/>
 
