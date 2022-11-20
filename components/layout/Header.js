@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useAuth } from "../../context/AuthContext";
-import LogoutButton from "../Authentification/LogoutButton";
+import LogoutButton from "../authentication/LogoutButton";
 
 export default function Header() {
   const { currentUser } = useAuth();

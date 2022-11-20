@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
-import Login from "../components/Authentification/Login";
+import Login from "../components/authentication/Login";
 
 export default function LoginPage() {
   return (
