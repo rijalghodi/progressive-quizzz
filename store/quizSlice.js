@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 import { getQuiz } from "./quizAsyncThunk";
-import quizNormalizer from "../util/helper";
+import quizNormalizer from "../util/quizNormalizer";
 
 const quizSlice = createSlice({
   name: "quiz",
@@ -12,11 +12,15 @@ const quizSlice = createSlice({
     error: false,
   },
   reducers: {
-    rehydrate: (state, { payload }) => {
-      state.questions = payload;
+    setUserAnswer: (state, { payload }) => {
+      const { indexQuestion, value } = payload;
+      state.quiz[indexQuestion].userAnswer = value;
     },
-    increaseScore: (state, { payload }) => {
-      state.score = state.score + 1;
+    rehydrate: (state, { payload }) => {
+      state.quiz = payload;
+    },
+    setScore: (state, { payload }) => {
+      state.score = payload;
     },
     setActiveQuestion: (state, { payload }) => {
       state.activeQuestion = payload;
@@ -41,8 +45,12 @@ const quizSlice = createSlice({
 });
 
 export const selectQuiz = (state) => state.quiz.quiz;
+export const selectScore = (state) => state.quiz.score;
+
+export const selectQuestion = (state, number) =>
+  state.quiz.quiz[number - 1].question;
 export const selectActiveQuestion = (state) => state.quiz.activeQuestion;
 
-export const { rehydrate, increaseScore, setActiveQuestion } =
+export const { rehydrate, setScore, setActiveQuestion, setUserAnswer } =
   quizSlice.actions;
 export default quizSlice.reducer;

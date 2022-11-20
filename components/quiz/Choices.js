@@ -1,63 +1,47 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectAnswersByNumber,
+  selectQuiz,
+  setUserAnswer,
+} from "../../store/quizSlice";
 import styles from "./Quiz.module.css";
 
-export default function Choices({ correct, incorrects, number }) {
-  const numQuestions = incorrects.length + 1;
+export default function Choices({ number }) {
+  const dispatch = useDispatch();
+  const quiz = useSelector(selectQuiz);
+  const indexQuestion = number - 1;
+  const answers = quiz[indexQuestion].answers;
 
-  // Marker (A, B, C, D)
-  let markers = [];
-  for (let i = 0; i < numQuestions; i++) {
-    markers = [...markers, String.fromCharCode(i + 65)];
-  }
-
-  // Marker for the correct answer
-  const random = Math.floor(Math.random() * numQuestions);
-  const trueMarker = markers[random];
-  let index = -1;
+  // event handlers
+  const onAnswerChange = ({ target }) => {
+    const payload = { indexQuestion: indexQuestion, value: target.value };
+    dispatch(setUserAnswer(payload));
+  };
 
   return (
     <div className={styles.choicesWrapper}>
-      {markers.map((marker) => {
-        if (marker !== trueMarker) {
-          index++;
-          return (
-            <>
-              <input
-                type="radio"
-                id={`choice${number}${marker}`}
-                name={`choices${number}`}
-                value={marker}
-                className="hidden radio-btn"
-              ></input>
-              <label
-                htmlFor={`choice${number}${marker}`}
-                className={styles.choiceWrapper}
-              >
-                <div className={styles.choiceMarker}>{marker}</div>
-                <div className={styles.choice}>{incorrects[index]}</div>
-              </label>
-            </>
-          );
-        } else {
-          return (
-            <>
-              <input
-                type="radio"
-                id={`choice${number}${marker}`}
-                name={`choices${number}`}
-                value={marker}
-                className="hidden"
-              ></input>
-              <label
-                htmlFor={`choice${number}${marker}`}
-                className={styles.choiceWrapper}
-              >
-                <div className={"marker " + styles.choiceMarker}>{marker}</div>
-                <div className={styles.choice}>{correct}</div>
-              </label>
-            </>
-          );
-        }
+      {answers.map((ans, index) => {
+        const { marker, answer } = ans;
+        return (
+          <Fragment key={index}>
+            <input
+              type="radio"
+              id={`choice${number}${marker}`}
+              name={`choices${number}`}
+              value={marker}
+              className="hidden radio-btn"
+              onChange={onAnswerChange}
+            ></input>
+            <label
+              htmlFor={`choice${number}${marker}`}
+              className={styles.choiceWrapper}
+            >
+              <div className={styles.choiceMarker}>{marker}</div>
+              <div className={styles.choice}>{answer}</div>
+            </label>
+          </Fragment>
+        );
       })}
     </div>
   );

@@ -3,13 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectActiveQuestion, setActiveQuestion } from "../../store/quizSlice";
 import styles from "./Quiz.module.css";
 import Choices from "./Choices";
-import { useRouter } from "next/router";
+import SubmitQuizButton from "./SubmitQuizButton";
 
-export default function Question({ questionSet, number, amount }) {
-  const { question, correct_answer, incorrect_answers } = questionSet;
+export default function Question({ questionSet, amount }) {
+  const { number, question } = questionSet;
   const activeQuestion = useSelector(selectActiveQuestion);
   const dispatch = useDispatch();
-  const router = useRouter();
 
   const [hidden, setHidden] = useState(true);
 
@@ -30,12 +29,6 @@ export default function Question({ questionSet, number, amount }) {
     dispatch(setActiveQuestion(number - 1));
   };
 
-  const onSubmit = () => {
-    if (confirm("Do you want to submit?")) {
-      router.push("quiz/result");
-    }
-  };
-
   return (
     <section className={`${hidden && "hidden"} ${styles.fieldWrapper}`}>
       <div className={styles.questionWrapper}>
@@ -43,11 +36,7 @@ export default function Question({ questionSet, number, amount }) {
         <div className={styles.askWrapper}>
           <p>{question}</p>
         </div>
-        <Choices
-          correct={correct_answer}
-          incorrects={incorrect_answers}
-          number={number}
-        />
+        <Choices number={number} />
       </div>
       <div className="flex gap-2">
         {number !== amount ? (
@@ -59,13 +48,7 @@ export default function Question({ questionSet, number, amount }) {
             Next
           </button>
         ) : (
-          <button
-            type="buton"
-            className="button primary-button"
-            onClick={onSubmit}
-          >
-            Submit
-          </button>
+          <SubmitQuizButton />
         )}
 
         {number !== 1 && (

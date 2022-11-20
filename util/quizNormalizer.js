@@ -1,5 +1,6 @@
 export class QuestionSet {
-  constructor(question, answers, correctMarker, userAnswer) {
+  constructor(number, question, answers, correctMarker, userAnswer) {
+    this.number = number;
     this.question = question;
     this.answers = answers;
     this.correctMarker = correctMarker;
@@ -18,7 +19,7 @@ export class Answer {
  * questionSetNormalizer is a function to rearrange the questionSet from
  * Open Trivia DB API format to format that more conveniece to manage
  */
-export function questionSetNormalizer(question, correct, incorrects) {
+export function questionSetNormalizer(number, question, correct, incorrects) {
   const numQuestions = incorrects.length + 1;
 
   // Marker (A, B, C, D)
@@ -35,16 +36,24 @@ export function questionSetNormalizer(question, correct, incorrects) {
   let answers = [];
   let indexIncorrects = 0;
   markers.forEach((marker) => {
-    let answer;
     if (marker !== correctMarker) {
       const answer = new Answer(marker, incorrects[indexIncorrects]);
+      answers.push(answer);
       indexIncorrects++;
     } else {
       const answer = new Answer(marker, correct);
+      answers.push(answer);
     }
-    answers.push(answer);
   });
-  const questionSet = new QuestionSet(question, answers, correctMarker, "");
+  const rawQuestionSet = new QuestionSet(
+    number,
+    question,
+    answers,
+    correctMarker,
+    ""
+  );
+  // Serialize
+  const questionSet = JSON.parse(JSON.stringify(rawQuestionSet));
   return questionSet;
 }
 
@@ -54,9 +63,12 @@ export function questionSetNormalizer(question, correct, incorrects) {
  */
 export default function quizNormalizer(questionSetCollection) {
   let quiz = [];
+  let number = 0;
   questionSetCollection.forEach((questionSet) => {
+    number++;
     const { question, correct_answer, incorrect_answers } = questionSet;
     const NormalizedQuestionSet = questionSetNormalizer(
+      number,
       question,
       correct_answer,
       incorrect_answers

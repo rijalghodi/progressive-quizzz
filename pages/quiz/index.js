@@ -11,13 +11,17 @@ import { store } from "../../store/store";
 export default function QuizPage({ initialState }) {
   // Redux tools
   const dispatch = useDispatch();
-  const { quiz } = initialState;
-  const { questions } = quiz;
+  const quiz = initialState.quiz.quiz;
+  console.log("CObaaaaaaaaaaa");
+  console.log(quiz);
+  dispatch(rehydrate(quiz));
 
   // React Tools
-  // useEffect(() => {
-  //   dispatch(rehydrate(questions));
-  // });
+  useEffect(() => {
+    console.log("rehydrate.......");
+    console.log(quiz);
+    dispatch(rehydrate(quiz));
+  }, []);
 
   const { currentUser } = useAuth();
   const route = useRouter();
@@ -27,8 +31,8 @@ export default function QuizPage({ initialState }) {
   } else {
     return (
       <div className="w-full flex flex-row">
-        <QuizNav questions={questions} />
-        <Quiz questions={questions} />
+        <QuizNav quizs={quiz} />
+        <Quiz quiz={quiz} />
       </div>
     );
   }
@@ -37,7 +41,6 @@ export default function QuizPage({ initialState }) {
 export async function getServerSideProps() {
   await store.dispatch(getQuiz());
   const initialState = store.getState();
-
   return {
     props: {
       initialState,
