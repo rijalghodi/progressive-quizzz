@@ -7,9 +7,9 @@ export default function Quiz({ quiz }) {
     <main className="w-full lg:pr-48">
       {quiz?.map((questionSet, index) => {
         return (
-          <Fragment key={index}>
+          <div key={index}>
             <Question questionSet={questionSet} amount={amount} />
-          </Fragment>
+          </div>
         );
       })}
     </main>

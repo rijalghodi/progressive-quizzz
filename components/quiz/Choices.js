@@ -24,7 +24,7 @@ export default function Choices({ number }) {
       {answers.map((ans, index) => {
         const { marker, answer } = ans;
         return (
-          <Fragment key={index}>
+          <div key={index}>
             <input
               type="radio"
               id={`choice${number}${marker}`}
@@ -40,7 +40,7 @@ export default function Choices({ number }) {
               <div className={styles.choiceMarker}>{marker}</div>
               <div className={styles.choice}>{answer}</div>
             </label>
-          </Fragment>
+          </div>
         );
       })}
     </div>
