@@ -23,7 +23,7 @@ Here is what the app looks like:
 
 ## How To Run
 
-Visit the deployment on [this link](https://quizzz-nine.vercel.app/)
+Visit the deployment on [this link](https://quizzz-v1.vercel.app/)
 
 If you want to run this app in local computer, do:
 
