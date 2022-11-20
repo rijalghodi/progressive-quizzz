@@ -5,21 +5,23 @@ import SubmitQuizButton from "../quiz/SubmitQuizButton";
 
 export default function QuizNav({ quiz }) {
   return (
-    <aside className={styles.quizNav}>
-      <h2 className="">Quiz Navigation</h2>
-      <ul className="">
-        {quiz?.map((questionSet, index) => {
-          const { number } = questionSet;
-          return (
-            <li key={index}>
-              <QuestionNav number={number} />
-            </li>
-          );
-        })}
-      </ul>
-      <div className="px-auto">
-        <SubmitQuizButton />
-      </div>
-    </aside>
+    <>
+      <aside className={styles.quizNav}>
+        <h2 className="">Quiz Navigation</h2>
+        <ul className="">
+          {quiz?.map((questionSet, index) => {
+            const { number } = questionSet;
+            return (
+              <li key={index}>
+                <QuestionNav number={number} />
+              </li>
+            );
+          })}
+        </ul>
+        <div className="px-auto">
+          <SubmitQuizButton />
+        </div>
+      </aside>
+    </>
   );
 }
