@@ -3,7 +3,7 @@ export function scoreCalculator(quiz) {
   quiz.forEach((questionSet) => {
     const { correctMarker, userAnswer } = questionSet;
     if (correctMarker === userAnswer) {
-      score = +10;
+      score += 10;
     }
   });
   return score;
