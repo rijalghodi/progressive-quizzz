@@ -13,7 +13,7 @@ export default function QuestionNav({ number }) {
         dispatch(setActiveQuestion(number));
       }}
     >
-      <span>{number}</span>
+      {number}
     </button>
   );
 }

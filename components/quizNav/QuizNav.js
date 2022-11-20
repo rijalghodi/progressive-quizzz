@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./QuizNav.module.css";
 import QuestionNav from "./QuestionNav";
+import SubmitQuizButton from "../quiz/SubmitQuizButton";
 
 export default function QuizNav({ quiz }) {
   return (
@@ -10,16 +11,14 @@ export default function QuizNav({ quiz }) {
         {quiz?.map((questionSet, index) => {
           const { number } = questionSet;
           return (
-            <li key={index}>
+            <li>
               <QuestionNav number={number} />
             </li>
           );
         })}
       </ul>
-      <div className="">
-        <button type="button" className={styles.actionButton}>
-          Submit
-        </button>
+      <div>
+        <SubmitQuizButton />
       </div>
     </aside>
   );

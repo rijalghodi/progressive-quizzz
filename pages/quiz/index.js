@@ -12,8 +12,6 @@ export default function QuizPage({ initialState }) {
   // Redux tools
   const dispatch = useDispatch();
   const quiz = initialState.quiz.quiz;
-  console.log("CObaaaaaaaaaaa");
-  console.log(quiz);
   dispatch(rehydrate(quiz));
 
   // React Tools
@@ -31,7 +29,7 @@ export default function QuizPage({ initialState }) {
   } else {
     return (
       <div className="w-full flex flex-row">
-        <QuizNav quizs={quiz} />
+        <QuizNav quiz={quiz} />
         <Quiz quiz={quiz} />
       </div>
     );
