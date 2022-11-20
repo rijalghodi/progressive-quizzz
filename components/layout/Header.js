@@ -14,7 +14,11 @@ export default function Header() {
             <p className="text-3xl font-bold link">Quizzz</p>
           </div>
         </Link>
-        <nav className="hidden lg:col-span-3 lg:flex">
+      </div>
+
+      {/* Right side */}
+      <div className="flex flex-row gap-10 items-center justify-center lg:justify-end shrink">
+        <nav className="flex">
           <ul className="flex gap-6 justify-start">
             <li className="link text-xl">
               <Link href={"/"}>Home</Link>
@@ -31,23 +35,25 @@ export default function Header() {
             {/* <li className="link"></li> */}
           </ul>
         </nav>
+        <div>
+          {currentUser ? (
+            <LogoutButton />
+          ) : (
+            <div className="flex gap-3">
+              <Link href={"/login"}>
+                <button className="w-28 button primary-button">Log In</button>
+              </Link>
+              <Link href={"/signup"}>
+                <button className="w-32 button secondary-button">
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Right side */}
-      <div className="hidden lg:flex gap-3 items-center shrink">
-        {currentUser ? (
-          <LogoutButton />
-        ) : (
-          <>
-            <Link href={"/login"}>
-              <button className="w-28 button primary-button">Log In</button>
-            </Link>
-            <Link href={"/signup"}>
-              <button className="w-32 button secondary-button">Sign Up</button>
-            </Link>
-          </>
-        )}
-      </div>
+      {/* Sidebar Mobile Version */}
     </header>
   );
 }
