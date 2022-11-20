@@ -17,7 +17,7 @@ export default function QuizNav({ quiz }) {
           );
         })}
       </ul>
-      <div>
+      <div className="px-auto">
         <SubmitQuizButton />
       </div>
     </aside>

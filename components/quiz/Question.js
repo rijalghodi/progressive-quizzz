@@ -48,7 +48,9 @@ export default function Question({ questionSet, amount }) {
             Next
           </button>
         ) : (
-          <SubmitQuizButton />
+          <div className="w-28">
+            <SubmitQuizButton />
+          </div>
         )}
 
         {number !== 1 && (

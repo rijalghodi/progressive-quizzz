@@ -17,7 +17,11 @@ export default function SubmitQuizButton() {
     }
   };
   return (
-    <button type="buton" className="button primary-button" onClick={onSubmit}>
+    <button
+      type="buton"
+      className="button primary-button block mx-auto"
+      onClick={onSubmit}
+    >
       Submit
     </button>
   );
