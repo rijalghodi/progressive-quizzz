@@ -11,7 +11,7 @@ export default function QuizNav({ quiz }) {
         {quiz?.map((questionSet, index) => {
           const { number } = questionSet;
           return (
-            <li>
+            <li key={index}>
               <QuestionNav number={number} />
             </li>
           );

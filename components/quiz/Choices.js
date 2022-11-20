@@ -1,10 +1,6 @@
 import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  selectAnswersByNumber,
-  selectQuiz,
-  setUserAnswer,
-} from "../../store/quizSlice";
+import { selectQuiz, setUserAnswer } from "../../store/quizSlice";
 import styles from "./Quiz.module.css";
 
 export default function Choices({ number }) {
@@ -24,7 +20,7 @@ export default function Choices({ number }) {
       {answers.map((ans, index) => {
         const { marker, answer } = ans;
         return (
-          <div key={index}>
+          <Fragment key={index}>
             <input
               type="radio"
               id={`choice${number}${marker}`}
@@ -40,7 +36,7 @@ export default function Choices({ number }) {
               <div className={styles.choiceMarker}>{marker}</div>
               <div className={styles.choice}>{answer}</div>
             </label>
-          </div>
+          </Fragment>
         );
       })}
     </div>
