@@ -55,7 +55,6 @@ export default function Question({ questionSet, amount }) {
 
         {number !== 1 && (
           <button
-            disabled={number === 1}
             type="button"
             className="button secondary-button"
             onClick={onPrevious}
