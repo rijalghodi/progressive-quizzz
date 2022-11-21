@@ -513,21 +513,50 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
 
-.relative {
-  position: relative;
+.right-3 {
+  right: 0.75rem;
 }
 
-.top-0 {
-  top: 0px;
+.top-6 {
+  top: 1.5rem;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
+.right-8 {
+  right: 2rem;
 }
 
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .mb-4 {
@@ -566,12 +595,32 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .w-\[330px\] {
@@ -582,20 +631,24 @@ video {
   width: 100%;
 }
 
-.w-28 {
-  width: 7rem;
+.w-12 {
+  width: 3rem;
 }
 
-.w-48 {
-  width: 12rem;
+.w-8 {
+  width: 2rem;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .shrink-0 {
   flex-shrink: 0;
 }
 
-.shrink {
-  flex-shrink: 1;
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -614,16 +667,20 @@ video {
   justify-content: center;
 }
 
-.gap-10 {
-  gap: 2.5rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-6 {
   gap: 1.5rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.gap-1\.5 {
+  gap: 0.375rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .rounded-md {
@@ -681,9 +738,19 @@ video {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
@@ -696,28 +763,56 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:right-12 {
+    right: 3rem;
+  }
+
+  .sm\:right-16 {
+    right: 4rem;
+  }
+
+  .sm\:right-20 {
+    right: 5rem;
+  }
+
   .sm\:w-4\/5 {
     width: 80%;
   }
 }
 
 @media (min-width: 768px) {
+  .md\:right-16 {
+    right: 4rem;
+  }
+
+  .md\:right-24 {
+    right: 6rem;
+  }
+
+  .md\:right-28 {
+    right: 7rem;
+  }
+
+  .md\:right-32 {
+    right: 8rem;
+  }
+
   .md\:min-w-\[550px\] {
     min-width: 550px;
   }
 }
 
 @media (min-width: 1024px) {
+  .lg\:hidden {
+    display: none;
+  }
+
   .lg\:w-\[400px\] {
     width: 400px;
   }
 
   .lg\:w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:justify-end {
-    justify-content: flex-end;
   }
 
   .lg\:py-48 {

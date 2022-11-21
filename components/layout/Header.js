@@ -73,7 +73,7 @@ export default function Header() {
 
       {/* Sidebar Mobile Version */}
       <button
-        className={styles.mobileMenuIcon}
+        className="w-12 h-12 flex justify-center items-center primary-button text-3xl"
         onClick={handleOpenCloseMobileNav}
       >
         <HiMenu />

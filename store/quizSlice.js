@@ -47,8 +47,6 @@ const quizSlice = createSlice({
 export const selectQuiz = (state) => state.quiz.quiz;
 export const selectScore = (state) => state.quiz.score;
 
-export const selectQuestion = (state, number) =>
-  state.quiz.quiz[number - 1].question;
 export const selectActiveQuestion = (state) => state.quiz.activeQuestion;
 
 export const { rehydrate, setScore, setActiveQuestion, setUserAnswer } =
