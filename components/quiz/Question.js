@@ -41,7 +41,7 @@ export default function Question({ questionSet, amount }) {
       <div className="flex gap-2">
         {number !== amount ? (
           <button
-            type="buton"
+            type="button"
             className="button primary-button"
             onClick={onNext}
           >

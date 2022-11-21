@@ -24,14 +24,13 @@ export default function QuizPage({ initialState }) {
   if (!currentUser) {
     route.push("/login");
     return;
-  } else {
-    return (
-      <div className="w-full flex flex-row">
-        <QuizNav quiz={quiz} />
-        <Quiz quiz={quiz} />
-      </div>
-    );
   }
+  return (
+    <div className="w-full flex flex-row">
+      <QuizNav quiz={quiz} />
+      <Quiz quiz={quiz} />
+    </div>
+  );
 }
 
 export async function getServerSideProps() {

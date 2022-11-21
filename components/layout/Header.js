@@ -6,19 +6,19 @@ import HeaderAuthenticationButtons from "../authentication/HeaderAuthenticationB
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const [openMobileNav, setOpenMobileNav] = useState(false);
+  const [toggleMobileNav, setToggleMobileNav] = useState(false);
 
-  const handleOpenCloseMobileNav = () => {
-    if (openMobileNav) {
-      setOpenMobileNav(false);
+  const handleToggleMobileNav = () => {
+    if (toggleMobileNav) {
+      setToggleMobileNav(false);
     } else {
-      setOpenMobileNav(true);
+      setToggleMobileNav(true);
     }
   };
 
-  if (openMobileNav) {
+  if (toggleMobileNav) {
     return (
-      <div className={styles.mobileMenu} onClick={handleOpenCloseMobileNav}>
+      <div className={styles.mobileMenu} onClick={handleToggleMobileNav}>
         <nav>
           <ul className={styles.mobileNav}>
             <li className="link block text-xl">
@@ -73,8 +73,8 @@ export default function Header() {
 
       {/* Sidebar Mobile Version */}
       <button
-        className="w-12 h-12 flex justify-center items-center primary-button text-3xl"
-        onClick={handleOpenCloseMobileNav}
+        className="w-12 h-12 flex justify-center items-center primary-button text-3xl sm:hidden"
+        onClick={handleToggleMobileNav}
       >
         <HiMenu />
       </button>

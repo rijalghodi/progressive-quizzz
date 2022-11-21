@@ -5,13 +5,15 @@ export default function Quiz({ quiz }) {
   const amount = quiz.length;
   return (
     <main className="w-full lg:pr-48">
-      {quiz?.map((questionSet, index) => {
-        return (
-          <Fragment key={index}>
-            <Question questionSet={questionSet} amount={amount} />
-          </Fragment>
-        );
-      })}
+      <form>
+        {quiz?.map((questionSet, index) => {
+          return (
+            <Fragment key={index}>
+              <Question questionSet={questionSet} amount={amount} />
+            </Fragment>
+          );
+        })}
+      </form>
     </main>
   );
 }

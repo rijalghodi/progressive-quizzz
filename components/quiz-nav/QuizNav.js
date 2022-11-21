@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import styles from "./QuizNav.module.css";
-import QuestionNav from "./QuestionNav";
-import SubmitQuizButton from "../quiz/SubmitQuizButton";
 import { VscBook } from "react-icons/vsc";
 import { FaBookOpen, FaBook, FaTimes } from "react-icons/fa";
 import { CgMenuGridR } from "react-icons/cg";
+import styles from "./QuizNav.module.css";
+import QuestionNav from "./QuestionNav";
+import SubmitQuizButton from "../quiz/SubmitQuizButton";
+import { useAuth } from "../../context/AuthContext";
 
 export default function QuizNav({ quiz }) {
   const [toggleQuizNav, setToggleQuizNav] = useState(false);
@@ -30,7 +31,7 @@ export default function QuizNav({ quiz }) {
         className={styles.quizNav + (toggleQuizNav ? " block" : " hidden")}
       >
         <button
-          className="w-8 h-8 flex justify-center items-center secondary-button absolute left-3 top-3 text-xl lg:hidden"
+          className="w-8 h-8 flex justify-center items-center secondary-button absolute left-5 top-3 text-xl lg:hidden"
           onClick={onToggleQuizNav}
         >
           <FaTimes />

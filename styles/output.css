@@ -549,6 +549,14 @@ video {
   right: 2rem;
 }
 
+.right-7 {
+  right: 1.75rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -775,6 +783,10 @@ video {
     right: 5rem;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:w-4\/5 {
     width: 80%;
   }
@@ -795,6 +807,10 @@ video {
 
   .md\:right-32 {
     right: 8rem;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:min-w-\[550px\] {
