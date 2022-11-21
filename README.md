@@ -1,7 +1,4 @@
-# Quizzz
-
-**Note :**
-This app is my work submitted to the technical test at PT. Optima Media Tekologi. The progressive development version of the app can be seen on [this link](https://github.com/rijalghodi/progressive-quizzz)
+# Progressive Quizzz
 
 ## Description
 
