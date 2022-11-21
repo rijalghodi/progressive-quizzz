@@ -10,18 +10,17 @@ export default function Home() {
   if (!currentUser) {
     route.push("/login");
     return;
-  } else {
-    return (
-      <div className="">
-        <Head>
-          <title>Quizz</title>
-          <meta name="description" content="Great quizz app" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Layout>
-          <Dashboard />
-        </Layout>
-      </div>
-    );
   }
+  return (
+    <div className="">
+      <Head>
+        <title>Quizz</title>
+        <meta name="description" content="Great quizz app" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Layout>
+        <Dashboard />
+      </Layout>
+    </div>
+  );
 }
