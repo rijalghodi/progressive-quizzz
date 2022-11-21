@@ -1,7 +1,7 @@
 import * as firebase from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-const FirebaseProdCofig = {
+const FirebaseCofig = {
   // Firebase auth api keys for production
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -21,7 +21,7 @@ const FirebaseDevConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_DEV_APP_ID,
 };
 
-const app = firebase.initializeApp(FirebaseDevConfig);
+const app = firebase.initializeApp(FirebaseCofig);
 
 export const auth = getAuth(app);
 export default app;
