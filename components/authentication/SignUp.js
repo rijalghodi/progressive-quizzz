@@ -2,8 +2,10 @@ import React, { useRef, useState } from "react";
 import style from "./Authentication.module.css";
 import { useAuth } from "../../context/AuthContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function SignUp() {
+  const router = useRouter();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -22,6 +24,8 @@ export default function SignUp() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      alert("Your account has been created!");
+      router.push("/login");
     } catch (error) {
       setError("Failed to create an account");
       console.log(error);
