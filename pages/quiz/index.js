@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import QuizNav from "../../components/quizNav/QuizNav";
+import QuizNav from "../../components/quiz-nav/QuizNav";
 import Quiz from "../../components/quiz/Quiz";
 import { useRouter } from "next/router";
 import { useAuth } from "../../context/AuthContext";
