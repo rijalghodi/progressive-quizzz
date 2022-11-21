@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "../../context/AuthContext";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuiz } from "../../store/quizAsyncThunk";
-import { selectQuiz, rehydrate } from "../../store/quizSlice";
+import { rehydrate } from "../../store/quizSlice";
 import { store } from "../../store/store";
 
 export default function QuizPage({ initialState }) {

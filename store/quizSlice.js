@@ -1,4 +1,4 @@
-import { createSlice, createSelector } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { getQuiz } from "./quizAsyncThunk";
 import quizNormalizer from "../util/quizNormalizer";
 

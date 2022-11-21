@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 
 export default function LogoutButton() {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const router = useRouter();
 
   async function handleLogout() {

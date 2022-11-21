@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import style from "./Authentication.module.css";
-import { useAuth } from "../../context/AuthContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import style from "./Authentication.module.css";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Login() {
   const emailRef = useRef();

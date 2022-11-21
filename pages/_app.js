@@ -2,8 +2,6 @@
 import "../styles/globals.css";
 // tailwind css
 import "../styles/output.css";
-// bootstrap css
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthProvider } from "../context/AuthContext";
 import { store } from "../store/store";
 import { Provider } from "react-redux";
