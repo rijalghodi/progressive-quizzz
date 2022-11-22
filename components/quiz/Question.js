@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectActiveQuestion, setActiveQuestion } from "../../store/quizSlice";
 import styles from "./Quiz.module.css";
-import Choices from "./Choices";
+import Answers from "./Answers";
 import SubmitQuizButton from "./SubmitQuizButton";
 
 export default function Question({ questionSet, amount }) {
@@ -36,7 +36,7 @@ export default function Question({ questionSet, amount }) {
         <div className={styles.askWrapper}>
           <p>{question}</p>
         </div>
-        <Choices number={number} />
+        <Answers number={number} />
       </div>
       <div className="flex gap-2">
         {number !== amount ? (
