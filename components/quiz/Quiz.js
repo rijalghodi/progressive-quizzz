@@ -5,7 +5,7 @@ export default function Quiz({ quiz }) {
   const amount = quiz.length;
   return (
     <main className="w-full lg:pr-48">
-      <form>
+      <div>
         {quiz?.map((questionSet, index) => {
           return (
             <Fragment key={index}>
@@ -13,7 +13,7 @@ export default function Quiz({ quiz }) {
             </Fragment>
           );
         })}
-      </form>
+      </div>
     </main>
   );
 }

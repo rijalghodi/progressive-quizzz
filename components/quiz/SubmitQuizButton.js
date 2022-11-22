@@ -9,7 +9,8 @@ export default function SubmitQuizButton() {
   const quiz = useSelector(selectQuiz);
   const router = useRouter();
   // Event handler
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     if (confirm("Do you want to submit?")) {
       router.push("quiz/result");
       const score = scoreCalculator(quiz);
