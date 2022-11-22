@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectQuiz, setUserAnswer } from "../../store/quizSlice";
 import styles from "./Quiz.module.css";
 
-export default function Choices({ number }) {
+export default function Answers({ number }) {
   const dispatch = useDispatch();
   const quiz = useSelector(selectQuiz);
   const indexQuestion = number - 1;

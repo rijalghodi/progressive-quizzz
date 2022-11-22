@@ -1,0 +1,10 @@
+.incorrect {
+  background-color: red !important;
+  border: none !important;
+}
+
+.correct {
+  background-color: #0f0 !important;
+  color: black;
+  border: none !important;
+}

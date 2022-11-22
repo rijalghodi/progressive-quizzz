@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { scoreCalculator } from "../../util/scoreCalculator";
-import { selectQuiz, setScore } from "../../store/quizSlice";
+import { selectQuiz, setActiveQuestion, setScore } from "../../store/quizSlice";
 
 export default function SubmitQuizButton() {
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ export default function SubmitQuizButton() {
       router.push("quiz/result");
       const score = scoreCalculator(quiz);
       dispatch(setScore(score));
+      dispatch(setActiveQuestion(1));
     }
   };
   return (
